@@ -15,10 +15,15 @@ body {
   width: 15%;
   background-color: #f4f4f4;
   height: 100%;
+  overflow: hidden;
 }
 
 .sidebar h2 {
   margin-top: 0;
+  font-size: clamp(18px, 2vw, 24px);
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .sidebar ul {
@@ -31,6 +36,9 @@ body {
   margin-bottom: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .sidebar li:hover {
@@ -65,4 +73,22 @@ footer {
 
 footer a {
   color: #fff;
+}
+
+/* Media queries pour les appareils mobiles */
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-height: 20%;
+    overflow-y: auto;
+  }
+
+  .content {
+    max-height: 80%;
+    overflow-y: auto;
+  }
 }
