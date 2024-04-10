@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POC - HTMX website</title>
+    <script src="https://unpkg.com/htmx.org@1.6.1/dist/htmx.min.js"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <h1>POC - HTMX website</h1>
+    </header>
+
+    <main class="container">
+      <nav class="sidebar">
+        <h2>Documentation</h2>
+        <ul id="article-list">
+          <li
+            hx-get="articles/htmx-intro.html"
+            hx-trigger="click"
+            hx-target="#article-content"
+          >
+            HTMX - Introduction
+          </li>
+          <li
+            hx-get="articles/htmx-advanced.html"
+            hx-trigger="click"
+            hx-target="#article-content"
+          >
+            HTMX - Advanced Usage
+          </li>
+          <li
+            hx-get="articles/htmx-optimization.html"
+            hx-trigger="click"
+            hx-target="#article-content"
+          >
+            HTMX - Optimization
+          </li>
+          <li
+            hx-get="articles/htmx-ux.html"
+            hx-trigger="click"
+            hx-target="#article-content"
+          >
+            HTMX - User Experience
+          </li>
+        </ul>
+      </nav>
+
+      <article class="content" id="article-content">
+        <!-- Dynamically loaded article content here -->
+      </article>
+    </main>
+
+    <footer>
+      <p>
+        This site was created by
+        <a href="https://github.com/Joris-Lft" target="_blank">Joris-Lft</a>
+        with ❤️
+      </p>
+    </footer>
+  </body>
+</html>
